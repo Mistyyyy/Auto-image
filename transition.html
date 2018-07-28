@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .main {
+            width: 300px;
+            height: 300px;
+            margin: 30px auto;
+            overflow: hidden;
+            border: 1px solid;
+            position: relative;
+            top: 20px;
+            transition: all .8s linear;
+        }
+
+        .main div {
+            width: 200px;
+            height: 50px;
+            margin: 10px auto;
+            border: 1px solid;
+
+        }
+
+        .main-top {
+            top: 21px;
+        }
+
+        .linear {
+            background: tomato;
+            transition: all .8s linear;
+        }
+
+        .ease {
+            background: teal;
+            transition: all .8s ease;
+        }
+
+        .ease-in {
+            background: springgreen;
+            transition: all .8s ease-in;
+        }
+
+        .ease-out {
+            background: slateblue;
+            transition: all .8s ease-out;
+        }
+
+        .linear:hover {
+            background: salmon;
+            width: 100px;
+        }
+
+        .ease:hover {
+            background: salmon;
+            width: 100px;
+        }
+
+        .ease-in:hover {
+            background: salmon;
+            width: 100px;
+        }
+
+        .ease-out:hover {
+            background: salmon;
+            width: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <button>click</button>
+    <div class="main">
+        <div class="linear"></div>
+        <div class="ease"></div>
+        <div class="ease-in"></div>
+        <div class="ease-out"></div>
+    </div>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            document.querySelector('.main').classList.add('main-top');
+        })
+    </script>
+</body>
+
+</html>

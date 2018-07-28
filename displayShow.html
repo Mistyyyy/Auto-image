@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .div {
+            height: 0px;
+            width: 100px;
+            background: salmon;
+            transition: all .9s linear .5s;
+        }
+
+        .show {
+            height: 100px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="div"></div>
+    <button>show</button>
+    <script>
+        let btn = document.querySelector('button');
+        btn.addEventListener('click', function () {
+            if (document.querySelector('.div').classList.contains('show')) {
+                document.querySelector('.div').classList.remove('show')
+            } else {
+                document.querySelector('.div').classList.add('show')
+            }
+        })
+    </script>
+</body>
+
+</html>

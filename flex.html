@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>flex 布局</title>
+    <style>
+        .al-flex{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            /* flex-flow: row wrap; */
+            justify-content: flex-start;
+        }
+        .al-flex1{
+            display: flex;
+            width: 800px;
+        }
+        .al-bg{
+            background: wheat;
+        }
+        .al-wh{
+            height: 300px;
+        }
+        .al-flex div{
+            width: 20%;
+            height: 100px;
+        }
+        .al-no0{
+            order: -1;
+            flex-grow: 1;
+            flex-basis: 100px;
+        }
+        .al-no1{
+            flex-grow: 3;
+            flex-basis: 100px;
+        }
+        .al-no2{
+            flex-grow: 1;
+            flex-basis: 100px;
+        }
+       .al-no3{
+           flex-grow: 1;
+           width: 30px;
+       }
+    </style>
+</head>
+<body>
+    <!-- 
+        flex布局的特点是将采用flex布局的元素 -> flex容器 -> 它的所有子元素都会变为容器的成员。
+        1.容器 轴，水平的主轴（main axis） 和垂直的交叉轴  (cross axis)-> 
+        2.可以给容器添加的属性有 ： flex-direction(决定主轴方向),flex-wrap(换行问题),flex-flow（前两个属性的简写）,
+                                justify-content（主轴的对其方式）,align-items（交叉轴的对其方式）,align-content。
+        
+        注：由flex-direction来决定主轴方向：并且flex-wrap来设置换行问题，justify-content来设置主轴的对齐方式，align-items来设置交叉轴的对齐方式。
+
+        给容器里的项目来应用属性：order（项目的排列顺序），flex-grow(项目的放大比例)，flex-shrink(项目的缩小比例)，flex-basis（分配多余空间之前，项目占据的主轴空间），
+                              flex（flex-grow，flex-shrink，flex-basis的缩写），align-self（设置单个项目的对齐方式）
+        flex-grow设置的值，flex-basis设置的值，与最终项目在主轴上所占的空间为：
+                :父元素的width - 每个项目的所占空间（width/height/flex-basis ） / （所有项目项目的flex-grow） * 每个项目的flex-grow + 每个项目的空间 .
+        注意：flex-basis 是分配多余空间之前 ，项目占据的主轴空间。而默认值是auto，即 如果flex-basis为auto时，会按照项目的本来大小来显示。然后再加上分配的空间。
+
+        flex值是：flex-grow，flex-shrink，flex-basis的缩写。默认值是 0 1 auto。
+                该属性有两个快捷值-> auto （1 1 auto）. none(0 0 auto)
+        align-self是值 项目可以设置自己的对齐方式（交叉轴上）->可以覆盖align-items的值。
+     -->
+     <h1>flex容器的一些性质</h1>
+    <div class="al-flex al-wh">
+        <div>number 1</div>
+        <div>number 2</div>
+        <div>number 3</div>
+        <div>number 4</div>
+        <div>number 5</div>
+        <div>number 6</div>
+        <div>number 7</div>
+        <div>number 8</div>
+        <div>number 9</div>
+    </div>
+    <h1>flex容器里的项目的性质</h1>
+    <div class="al-flex1 al-wh">
+        <div class="al-bg al-no1">NO 1</div>
+        <div class="al-bg al-no0">NO 0</div>
+        <div class="al-bg al-no2">NO 2</div>
+        <div class="al-bg al-no3">NO 3</div>
+    </div>
+</body>
+</html>
